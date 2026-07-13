@@ -17,6 +17,7 @@
       --navy-soft: #123847;
       --paper: #f5f3ee;
       --paper-light: #fbfaf7;
+      --white: #ffffff;
       --ink: #10232d;
       --muted: #69777e;
       --accent: #7598aa;
@@ -69,7 +70,7 @@
       left: 0;
       z-index: 20;
       width: 100%;
-      color: white;
+      color: var(--white);
     }
 
     nav {
@@ -99,12 +100,12 @@
     }
 
     .nav-links a:hover {
-      color: white;
+      color: var(--white);
     }
 
     .nav-contact {
       padding-bottom: 4px;
-      color: white;
+      color: var(--white);
       border-bottom: 1px solid rgba(255, 255, 255, 0.75);
     }
 
@@ -115,7 +116,7 @@
       align-items: center;
       overflow: hidden;
       padding: 165px 0 95px;
-      color: white;
+      color: var(--white);
       background:
         radial-gradient(
           circle at 82% 17%,
@@ -182,36 +183,17 @@
     }
 
     .hero-footer {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.8fr);
-      gap: 80px;
-      align-items: end;
+      max-width: 760px;
       margin-top: 66px;
       padding-top: 30px;
       border-top: 1px solid var(--line-dark);
     }
 
     .hero-copy {
-      max-width: 650px;
       margin: 0;
       color: rgba(255, 255, 255, 0.72);
       font-size: 19px;
       line-height: 1.65;
-    }
-
-    .hero-tags {
-      display: grid;
-      grid-template-columns: repeat(2, max-content);
-      justify-content: end;
-      gap: 11px 28px;
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 13px;
-    }
-
-    .hero-tags span::before {
-      content: "—";
-      margin-right: 8px;
-      color: rgba(255, 255, 255, 0.34);
     }
 
     section {
@@ -286,7 +268,7 @@
     }
 
     .philosophy {
-      color: white;
+      color: var(--white);
       background: var(--navy);
     }
 
@@ -341,19 +323,19 @@
     .investment-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 58px;
+      gap: 16px;
+      margin-top: 46px;
     }
 
     .investment-card {
       position: relative;
-      min-height: 285px;
+      min-height: 205px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 34px;
+      padding: 30px 32px;
       overflow: hidden;
-      background: #ffffff;
+      background: var(--white);
       border: 1px solid var(--line);
       transition:
         transform 0.25s ease,
@@ -389,23 +371,17 @@
       font-size: 21px;
     }
 
-    .company-sector {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
     .company-outcome {
-      max-width: 410px;
-      padding-top: 28px;
+      max-width: 460px;
+      padding-top: 22px;
       border-top: 1px solid var(--line);
       color: #354750;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     .contact {
-      color: white;
+      color: var(--white);
       background: var(--navy-soft);
     }
 
@@ -474,15 +450,10 @@
         padding-right: 30px;
       }
 
-      .hero-footer,
       .section-grid,
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 36px;
-      }
-
-      .hero-tags {
-        justify-content: start;
       }
 
       .focus-row,
@@ -523,10 +494,6 @@
         margin-top: 48px;
       }
 
-      .hero-tags {
-        grid-template-columns: 1fr;
-      }
-
       section {
         padding: 84px 0;
       }
@@ -546,8 +513,8 @@
       }
 
       .investment-card {
-        min-height: 245px;
-        padding: 28px;
+        min-height: 190px;
+        padding: 26px;
       }
 
       .footer-inner,
@@ -593,13 +560,6 @@
               AI List Capital invests in early-stage transformative
               technology companies.
             </p>
-
-            <div class="hero-tags">
-              <span>Artificial Intelligence</span>
-              <span>Enterprise Software</span>
-              <span>Robotics</span>
-              <span>Early Stage</span>
-            </div>
           </div>
         </div>
       </div>
@@ -675,7 +635,9 @@
         <div class="section-label">Investment Philosophy</div>
 
         <div>
-          <h2>Early conviction. Long-term alignment.</h2>
+          <h2>
+            Early conviction. Long-term alignment.
+          </h2>
 
           <p class="body-copy">
             We look for founders with deep insight, differentiated technology
@@ -721,7 +683,9 @@
             Investments
           </div>
 
-          <h2>Selected investments.</h2>
+          <h2>
+            Selected Companies.
+          </h2>
 
           <p>
             The management team of AI List Capital has previously invested
@@ -737,15 +701,12 @@
             rel="noopener noreferrer"
           >
             <div class="card-top">
-              <div>
-                <div class="company-name">Honey</div>
-                <div class="company-sector">Consumer Internet</div>
-              </div>
+              <div class="company-name">Honey</div>
               <div class="arrow">↗</div>
             </div>
 
             <div class="company-outcome">
-              Acquired by PayPal for approximately $4 billion
+              Acquired by PayPal for $4 billion
             </div>
           </a>
 
@@ -756,15 +717,12 @@
             rel="noopener noreferrer"
           >
             <div class="card-top">
-              <div>
-                <div class="company-name">Shape Security</div>
-                <div class="company-sector">Cybersecurity</div>
-              </div>
+              <div class="company-name">Shape Security</div>
               <div class="arrow">↗</div>
             </div>
 
             <div class="company-outcome">
-              Acquired by F5 Networks for approximately $1 billion
+              Acquired by F5 Networks for $1 billion
             </div>
           </a>
 
@@ -775,10 +733,7 @@
             rel="noopener noreferrer"
           >
             <div class="card-top">
-              <div>
-                <div class="company-name">Rubrik</div>
-                <div class="company-sector">Data Security</div>
-              </div>
+              <div class="company-name">Rubrik</div>
               <div class="arrow">↗</div>
             </div>
 
@@ -794,10 +749,7 @@
             rel="noopener noreferrer"
           >
             <div class="card-top">
-              <div>
-                <div class="company-name">Chef Robotics</div>
-                <div class="company-sector">Robotics and Automation</div>
-              </div>
+              <div class="company-name">Chef Robotics</div>
               <div class="arrow">↗</div>
             </div>
 
@@ -814,7 +766,9 @@
         <div>
           <div class="section-label">Contact</div>
 
-          <h2>Building an ambitious technology company?</h2>
+          <h2>
+            Building an ambitious technology company?
+          </h2>
 
           <p class="contact-copy">
             If you are building an ambitious company in artificial
