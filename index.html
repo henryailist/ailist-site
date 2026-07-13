@@ -8,21 +8,22 @@
 
   <meta
     name="description"
-    content="AI List Capital is an early-stage venture capital firm investing in transformative technology companies."
+    content="AI List Capital invests in early-stage transformative technology companies."
   >
 
   <style>
     :root {
-      --bg: #080b10;
-      --bg-soft: #0d1118;
-      --surface: #111722;
-      --surface-hover: #151d29;
-      --text: #f5f7fa;
-      --muted: #9aa4b2;
-      --border: rgba(255, 255, 255, 0.11);
-      --accent: #80a8ff;
-      --accent-soft: rgba(128, 168, 255, 0.13);
-      --max-width: 1180px;
+      --ink: #101b24;
+      --ink-soft: #273640;
+      --muted: #68757d;
+      --paper: #f3f1eb;
+      --paper-light: #faf9f6;
+      --navy: #102c3b;
+      --navy-light: #173d4e;
+      --blue: #6c91a5;
+      --line: rgba(16, 27, 36, 0.16);
+      --line-light: rgba(255, 255, 255, 0.2);
+      --max-width: 1240px;
     }
 
     * {
@@ -35,25 +36,18 @@
 
     body {
       margin: 0;
-      background:
-        radial-gradient(
-          circle at 75% 5%,
-          rgba(74, 109, 181, 0.16),
-          transparent 35%
-        ),
-        var(--bg);
-      color: var(--text);
+      background: var(--paper);
+      color: var(--ink);
       font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
+        "Avenir Next",
+        Avenir,
+        "Helvetica Neue",
         Helvetica,
         Arial,
         sans-serif;
-      line-height: 1.6;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -62,39 +56,40 @@
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 48px));
+      width: min(var(--max-width), calc(100% - 80px));
       margin: 0 auto;
     }
 
     header {
-      position: sticky;
+      position: absolute;
       top: 0;
+      left: 0;
       z-index: 20;
-      background: rgba(8, 11, 16, 0.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
+      width: 100%;
+      color: #ffffff;
     }
 
     nav {
-      min-height: 76px;
+      min-height: 96px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 32px;
+      gap: 40px;
+      border-bottom: 1px solid var(--line-light);
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.035em;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
-      color: var(--muted);
+      gap: 38px;
       font-size: 14px;
+      color: rgba(255, 255, 255, 0.76);
     }
 
     .nav-links a {
@@ -102,394 +97,497 @@
     }
 
     .nav-links a:hover {
-      color: var(--text);
+      color: #ffffff;
     }
 
-    .nav-button {
-      padding: 10px 17px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
+    .contact-nav {
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+      color: #ffffff;
     }
 
     .hero {
-      min-height: calc(100vh - 76px);
+      position: relative;
+      min-height: 800px;
       display: flex;
-      align-items: center;
-      padding: 110px 0 120px;
+      align-items: flex-end;
+      overflow: hidden;
+      padding: 190px 0 100px;
+      background:
+        radial-gradient(
+          circle at 76% 18%,
+          rgba(104, 157, 181, 0.29),
+          transparent 33%
+        ),
+        linear-gradient(120deg, #102b39 0%, #0d2532 52%, #173949 100%);
+      color: #ffffff;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -170px;
+      right: -190px;
+      width: 650px;
+      height: 650px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -55px;
+      right: -75px;
+      width: 400px;
+      height: 400px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
     }
 
     .hero-inner {
-      max-width: 1040px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 28px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
+      margin-bottom: 34px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
+      color: rgba(255, 255, 255, 0.68);
     }
 
     h1 {
-      max-width: 1050px;
+      max-width: 1060px;
       margin: 0;
-      font-size: clamp(58px, 8.3vw, 112px);
-      line-height: 0.97;
-      letter-spacing: -0.067em;
-      font-weight: 650;
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+      font-size: clamp(58px, 7vw, 100px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.042em;
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-top: 72px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line-light);
     }
 
     .hero-copy {
-      max-width: 740px;
-      margin: 38px 0 0;
-      color: var(--muted);
-      font-size: clamp(19px, 2vw, 24px);
-      line-height: 1.55;
+      max-width: 670px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 20px;
+      line-height: 1.6;
     }
 
-    .hero-meta {
+    .hero-tags {
       display: flex;
+      justify-content: flex-end;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 42px;
+      gap: 10px 22px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
     }
 
-    .tag {
-      padding: 10px 15px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: #c8d0dc;
-      font-size: 14px;
-      background: rgba(255, 255, 255, 0.025);
+    .hero-tags span::before {
+      content: "—";
+      margin-right: 8px;
+      color: rgba(255, 255, 255, 0.36);
     }
 
     section {
-      padding: 112px 0;
-      border-top: 1px solid var(--border);
+      padding: 140px 0;
+    }
+
+    .light-section {
+      background: var(--paper-light);
     }
 
     .section-grid {
       display: grid;
-      grid-template-columns: 0.7fr 2fr;
-      gap: 90px;
+      grid-template-columns: 0.65fr 2fr;
+      gap: 110px;
     }
 
     .section-label {
+      padding-top: 9px;
       color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
     h2 {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0;
-      font-size: clamp(38px, 5vw, 66px);
-      line-height: 1.07;
-      letter-spacing: -0.052em;
-      font-weight: 620;
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+      font-size: clamp(42px, 5.2vw, 72px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.038em;
     }
 
     .body-copy {
       max-width: 780px;
-      margin-top: 32px;
+      margin: 40px 0 0;
       color: var(--muted);
       font-size: 19px;
-      line-height: 1.72;
+      line-height: 1.75;
     }
 
-    .focus-grid {
+    .focus-list {
+      margin-top: 70px;
+      border-top: 1px solid var(--line);
+    }
+
+    .focus-row {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 52px;
-    }
-
-    .focus-card {
-      min-height: 260px;
-      padding: 30px;
-      border: 1px solid var(--border);
-      background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.045),
-        rgba(255, 255, 255, 0.015)
-      );
-      border-radius: 20px;
+      grid-template-columns: 70px 1fr 1.25fr;
+      gap: 32px;
+      align-items: start;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .focus-number {
-      margin-bottom: 72px;
-      color: var(--accent);
+      color: var(--blue);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
     }
 
-    .focus-card h3 {
-      margin: 0 0 12px;
-      font-size: 24px;
-      letter-spacing: -0.035em;
+    .focus-title {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
     }
 
-    .focus-card p {
-      margin: 0;
+    .focus-copy {
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .philosophy {
-      background:
-        radial-gradient(
-          circle at 10% 20%,
-          rgba(128, 168, 255, 0.09),
-          transparent 35%
-        ),
-        var(--bg-soft);
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .philosophy .section-label {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .philosophy .body-copy {
+      color: rgba(255, 255, 255, 0.65);
     }
 
     .principles {
-      margin-top: 52px;
-      border-top: 1px solid var(--border);
+      margin-top: 68px;
+      border-top: 1px solid var(--line-light);
     }
 
     .principle {
       display: grid;
-      grid-template-columns: 70px 240px 1fr;
-      gap: 28px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-      align-items: start;
+      grid-template-columns: 70px 0.8fr 1.3fr;
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line-light);
     }
 
     .principle-number {
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
+      color: #93b4c5;
+      font-size: 13px;
+      font-weight: 600;
     }
 
     .principle-title {
-      font-size: 18px;
-      font-weight: 650;
+      font-size: 20px;
+      font-weight: 500;
     }
 
     .principle-copy {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 16px;
+      line-height: 1.7;
     }
 
-    .portfolio-intro {
-      max-width: 760px;
-      margin: 28px 0 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.65;
+    .investments-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 60px;
+      padding-bottom: 54px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 54px;
+    .investments-header h2 {
+      max-width: 700px;
     }
 
-    .portfolio-card {
-      position: relative;
-      min-height: 250px;
-      padding: 32px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: var(--surface);
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-3px);
-      background: var(--surface-hover);
-      border-color: rgba(128, 168, 255, 0.32);
-    }
-
-    .portfolio-card::after {
-      content: "↗";
-      position: absolute;
-      top: 28px;
-      right: 30px;
-      color: var(--muted);
-      font-size: 20px;
-    }
-
-    .portfolio-card h3 {
+    .investment-note {
+      max-width: 400px;
       margin: 0;
-      font-size: 31px;
-      letter-spacing: -0.045em;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
-    .portfolio-category {
-      margin-top: 10px;
+    .investment-list {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .investment {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1.3fr 40px;
+      gap: 34px;
+      align-items: center;
+      min-height: 150px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding 0.25s ease;
+    }
+
+    .investment:last-child {
+      border-bottom: 0;
+    }
+
+    .investment:hover {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .company-name {
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+      font-size: clamp(30px, 3vw, 44px);
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .company-sector {
       color: var(--muted);
       font-size: 14px;
     }
 
-    .portfolio-outcome {
-      position: absolute;
-      left: 32px;
-      bottom: 30px;
-      max-width: calc(100% - 64px);
-      color: #dce2ec;
-      font-size: 17px;
-      line-height: 1.5;
+    .company-outcome {
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .arrow {
+      text-align: right;
+      color: var(--blue);
+      font-size: 22px;
     }
 
     .contact-section {
-      padding-bottom: 130px;
+      padding: 0;
+      background: var(--navy-light);
+      color: #ffffff;
     }
 
-    .contact-box {
-      padding: 72px;
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      background:
-        radial-gradient(
-          circle at 85% 15%,
-          rgba(128, 168, 255, 0.15),
-          transparent 35%
-        ),
-        var(--surface);
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1.55fr 0.75fr;
+      gap: 100px;
+      align-items: end;
+      padding-top: 135px;
+      padding-bottom: 135px;
     }
 
-    .contact-box h2 {
-      max-width: 760px;
+    .contact-section .eyebrow {
+      margin-bottom: 32px;
+    }
+
+    .contact-section h2 {
+      max-width: 850px;
     }
 
     .contact-copy {
-      max-width: 650px;
-      margin: 26px 0 36px;
-      color: var(--muted);
+      max-width: 700px;
+      margin: 38px 0 0;
+      color: rgba(255, 255, 255, 0.68);
       font-size: 19px;
+      line-height: 1.7;
     }
 
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
-      background: var(--text);
-      color: var(--bg);
-      font-weight: 700;
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+    .email-block {
+      padding-top: 30px;
+      border-top: 1px solid var(--line-light);
     }
 
-    .contact-link:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
+    .email-label {
+      margin-bottom: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .email-link {
+      display: inline-block;
+      font-size: 21px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+      padding-bottom: 5px;
     }
 
     footer {
-      padding: 36px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
+      padding: 38px 0;
+      background: #0c202b;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 13px;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 24px;
+      gap: 30px;
     }
 
-    .footer-right {
+    .locations {
       display: flex;
       gap: 24px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 940px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 48px));
+      }
+
+      .hero-bottom,
+      .section-grid,
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-tags {
+        justify-content: flex-start;
+      }
+
       .section-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 36px;
       }
 
-      .focus-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .focus-card {
-        min-height: 210px;
-      }
-
-      .focus-number {
-        margin-bottom: 44px;
-      }
-
+      .focus-row,
       .principle {
-        grid-template-columns: 48px 1fr;
+        grid-template-columns: 55px 1fr;
       }
 
+      .focus-copy,
       .principle-copy {
         grid-column: 2;
       }
+
+      .investments-header {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .investment {
+        grid-template-columns: 1fr 1fr 30px;
+      }
+
+      .company-outcome {
+        grid-column: 1 / 3;
+      }
+
+      .arrow {
+        grid-column: 3;
+        grid-row: 1;
+      }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 680px) {
       .container {
         width: min(100% - 30px, var(--max-width));
       }
 
       nav {
-        min-height: 66px;
+        min-height: 74px;
       }
 
-      .nav-links a:not(.nav-button) {
+      .nav-links a:not(.contact-nav) {
         display: none;
       }
 
       .hero {
         min-height: auto;
-        padding: 90px 0 92px;
+        padding: 150px 0 75px;
+      }
+
+      h1 {
+        font-size: clamp(49px, 14vw, 68px);
+        line-height: 1.04;
+      }
+
+      .hero-bottom {
+        gap: 35px;
+        margin-top: 50px;
       }
 
       section {
-        padding: 82px 0;
+        padding: 90px 0;
       }
 
-      .portfolio-grid {
-        grid-template-columns: 1fr;
+      h2 {
+        font-size: clamp(39px, 11vw, 56px);
       }
 
-      .portfolio-card {
-        min-height: 220px;
+      .focus-row,
+      .principle {
+        grid-template-columns: 38px 1fr;
+        gap: 20px;
       }
 
-      .contact-box {
-        padding: 42px 27px;
+      .investment {
+        grid-template-columns: 1fr 28px;
+        gap: 15px;
+        min-height: 180px;
       }
 
-      .footer-inner {
+      .company-sector,
+      .company-outcome {
+        grid-column: 1;
+      }
+
+      .arrow {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .contact-inner {
+        gap: 65px;
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+
+      .footer-inner,
+      .locations {
         flex-direction: column;
       }
 
-      .footer-right {
-        flex-direction: column;
+      .locations {
         gap: 7px;
       }
     }
@@ -505,8 +603,8 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#focus">Focus</a>
-          <a href="#portfolio">Portfolio</a>
-          <a class="nav-button" href="#contact">Contact</a>
+          <a href="#investments">Investments</a>
+          <a class="contact-nav" href="#contact">Contact</a>
         </div>
       </nav>
     </div>
@@ -515,33 +613,31 @@
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <div class="eyebrow">
-          Early-Stage Venture Capital
-        </div>
+        <div class="eyebrow">Early-Stage Venture Capital</div>
 
         <h1>
           Partnering with founders shaping the future of technology.
         </h1>
 
-        <p class="hero-copy">
-          AI List Capital invests in transformative technology companies
-          at the seed and Series A stages.
-        </p>
+        <div class="hero-bottom">
+          <p class="hero-copy">
+            AI List Capital invests in early-stage transformative
+            technology companies.
+          </p>
 
-        <div class="hero-meta">
-          <span class="tag">Artificial Intelligence</span>
-          <span class="tag">Enterprise Software</span>
-          <span class="tag">Robotics</span>
-          <span class="tag">United States</span>
+          <div class="hero-tags">
+            <span>Artificial Intelligence</span>
+            <span>Enterprise Software</span>
+            <span>Robotics</span>
+            <span>Early Stage</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section class="light-section" id="about">
       <div class="container section-grid">
-        <div class="section-label">
-          About
-        </div>
+        <div class="section-label">About</div>
 
         <div>
           <h2>
@@ -549,9 +645,9 @@
           </h2>
 
           <p class="body-copy">
-            Founded in 2017, AI List Capital is an early-stage venture
-            capital firm investing in exceptional founders across artificial
-            intelligence, enterprise software and robotics.
+            AI List Capital is an early-stage venture capital firm investing
+            in exceptional founders across artificial intelligence,
+            enterprise software and robotics.
           </p>
 
           <p class="body-copy">
@@ -565,42 +661,40 @@
 
     <section id="focus">
       <div class="container section-grid">
-        <div class="section-label">
-          Investment Focus
-        </div>
+        <div class="section-label">Investment Focus</div>
 
         <div>
           <h2>
-            Backing technology with the potential to redefine industries.
+            Backing technologies with the potential to redefine industries.
           </h2>
 
-          <div class="focus-grid">
-            <article class="focus-card">
+          <div class="focus-list">
+            <div class="focus-row">
               <div class="focus-number">01</div>
-              <h3>Artificial Intelligence</h3>
-              <p>
+              <div class="focus-title">Artificial Intelligence</div>
+              <div class="focus-copy">
                 AI infrastructure, intelligent applications and foundational
                 technologies enabling new products and business models.
-              </p>
-            </article>
+              </div>
+            </div>
 
-            <article class="focus-card">
+            <div class="focus-row">
               <div class="focus-number">02</div>
-              <h3>Enterprise Software</h3>
-              <p>
-                Software platforms that improve productivity, security,
+              <div class="focus-title">Enterprise Software</div>
+              <div class="focus-copy">
+                Software platforms that transform productivity, security,
                 automation and decision-making across the enterprise.
-              </p>
-            </article>
+              </div>
+            </div>
 
-            <article class="focus-card">
+            <div class="focus-row">
               <div class="focus-number">03</div>
-              <h3>Robotics</h3>
-              <p>
+              <div class="focus-title">Robotics</div>
+              <div class="focus-copy">
                 Intelligent systems combining software, automation and
                 physical-world capabilities.
-              </p>
-            </article>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -608,9 +702,7 @@
 
     <section class="philosophy">
       <div class="container section-grid">
-        <div class="section-label">
-          Investment Philosophy
-        </div>
+        <div class="section-label">Investment Philosophy</div>
 
         <div>
           <h2>
@@ -627,8 +719,8 @@
               <div class="principle-number">01</div>
               <div class="principle-title">Founder-led</div>
               <div class="principle-copy">
-                We seek exceptional founders with a distinctive understanding
-                of their market and a clear vision for the future.
+                Exceptional founders with a distinctive understanding of
+                their markets and a clear vision for the future.
               </div>
             </div>
 
@@ -636,8 +728,8 @@
               <div class="principle-number">02</div>
               <div class="principle-title">Technology-driven</div>
               <div class="principle-copy">
-                We invest in proprietary technology and products capable of
-                creating meaningful and durable competitive advantage.
+                Proprietary technology and products capable of creating
+                meaningful and durable competitive advantage.
               </div>
             </div>
 
@@ -645,8 +737,8 @@
               <div class="principle-number">03</div>
               <div class="principle-title">Long-term oriented</div>
               <div class="principle-copy">
-                We partner with founders through the critical stages of
-                company building, with a focus on lasting enterprise value.
+                Partnership through the critical stages of company building,
+                with a focus on lasting enterprise value.
               </div>
             </div>
           </div>
@@ -654,107 +746,103 @@
       </div>
     </section>
 
-    <section id="portfolio">
-      <div class="container section-grid">
-        <div class="section-label">
-          Selected Portfolio
-        </div>
+    <section class="light-section" id="investments">
+      <div class="container">
+        <div class="investments-header">
+          <div>
+            <div class="section-label" style="margin-bottom: 28px;">
+              Selected Investments
+            </div>
 
-        <div>
-          <h2>
-            Selected investments in category-defining technology companies.
-          </h2>
+            <h2>Selected investments.</h2>
+          </div>
 
-          <p class="portfolio-intro">
+          <p class="investment-note">
             The management team of AI List Capital has previously invested
             in the following portfolio companies.
           </p>
+        </div>
 
-          <div class="portfolio-grid">
-            <a
-              class="portfolio-card"
-              href="https://www.joinhoney.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3>Honey</h3>
-              <div class="portfolio-category">
-                Consumer Internet
-              </div>
-              <div class="portfolio-outcome">
-                Acquired by PayPal for approximately $4 billion
-              </div>
-            </a>
+        <div class="investment-list">
+          <a
+            class="investment"
+            href="https://www.joinhoney.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="company-name">Honey</div>
+            <div class="company-sector">Consumer Internet</div>
+            <div class="company-outcome">
+              Acquired by PayPal for approximately $4 billion
+            </div>
+            <div class="arrow">↗</div>
+          </a>
 
-            <a
-              class="portfolio-card"
-              href="https://shapesecurity.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3>Shape Security</h3>
-              <div class="portfolio-category">
-                Cybersecurity
-              </div>
-              <div class="portfolio-outcome">
-                Acquired by F5 Networks for approximately $1 billion
-              </div>
-            </a>
+          <a
+            class="investment"
+            href="https://shapesecurity.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="company-name">Shape Security</div>
+            <div class="company-sector">Cybersecurity</div>
+            <div class="company-outcome">
+              Acquired by F5 Networks for approximately $1 billion
+            </div>
+            <div class="arrow">↗</div>
+          </a>
 
-            <a
-              class="portfolio-card"
-              href="https://www.rubrik.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3>Rubrik</h3>
-              <div class="portfolio-category">
-                Data Security
-              </div>
-              <div class="portfolio-outcome">
-                Publicly listed on the New York Stock Exchange · RBRK
-              </div>
-            </a>
+          <a
+            class="investment"
+            href="https://www.rubrik.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="company-name">Rubrik</div>
+            <div class="company-sector">Data Security</div>
+            <div class="company-outcome">
+              Publicly listed on the New York Stock Exchange · RBRK
+            </div>
+            <div class="arrow">↗</div>
+          </a>
 
-            <a
-              class="portfolio-card"
-              href="https://www.uipath.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3>UiPath</h3>
-              <div class="portfolio-category">
-                Enterprise Automation
-              </div>
-              <div class="portfolio-outcome">
-                Publicly listed on the New York Stock Exchange · PATH
-              </div>
-            </a>
-          </div>
+          <a
+            class="investment"
+            href="https://www.chefrobotics.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="company-name">Chef Robotics</div>
+            <div class="company-sector">Robotics and Automation</div>
+            <div class="company-outcome">
+              AI-powered robotic systems for food production
+            </div>
+            <div class="arrow">↗</div>
+          </a>
         </div>
       </div>
     </section>
 
     <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <div class="eyebrow">
-            Contact
-          </div>
+      <div class="container contact-inner">
+        <div>
+          <div class="eyebrow">Contact</div>
 
           <h2>
-            Building a transformative technology company?
+            Building an ambitious technology company?
           </h2>
 
           <p class="contact-copy">
-            We welcome introductions from founders building ambitious
-            companies in artificial intelligence, enterprise software
-            and robotics.
+            If you are building an ambitious company in artificial
+            intelligence, enterprise software or robotics, please talk to us.
           </p>
+        </div>
 
-          <a class="contact-link" href="mailto:info@ailist.io">
+        <div class="email-block">
+          <div class="email-label">Email</div>
+
+          <a class="email-link" href="mailto:info@ailist.io">
             info@ailist.io
-            <span>↗</span>
           </a>
         </div>
       </div>
@@ -765,9 +853,9 @@
     <div class="container footer-inner">
       <span>© 2026 AI List Capital. All rights reserved.</span>
 
-      <div class="footer-right">
-        <span>Founded in 2017</span>
-        <span>Palo Alto · Los Angeles</span>
+      <div class="locations">
+        <span>Palo Alto</span>
+        <span>Los Angeles</span>
       </div>
     </div>
   </footer>
